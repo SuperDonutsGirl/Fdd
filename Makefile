@@ -20,8 +20,6 @@ SOURCE_C			= 		./src_common/
 SOURCE_M			=		./src_manda/
 SOURCE_B			= 		./src_bonus/
 OBJ_TMP				=		./obj/
-$(OBJ_TMP)			:	
-								mkdir -p $(OBJ_TMP)
 
 ### FILES
 SRC_GNL				=		get_next_line.c  get_next_line_utils.c 
@@ -46,6 +44,9 @@ OBJ_BONUS			=		$(addprefix $(OBJ_TMP),  $(SRC_BONUS:%.c=%.o))
 $(OBJ_TMP)%.o		:		$(SOURCE_B)%.c 
 								$(CC) $(FLAGS) -c $< -o $@ $(INCLUDE)
 
+MANDA_TOT_OBJ		=		$(OBJ_COMMON) $(OBJ_GNL) $(OBJ_MANDA) 
+BONUS_TOT_OBJ		=		$(OBJ_COMMON) $(OBJ_GNL) $(OBJ_BONUS) 
+
 ### COMMANDS
 CC					= 		gcc
 FLAGS				=		-Wall -Wextra -Werror
@@ -57,17 +58,17 @@ INCLUDE				= 		-I $(HEADER)
 RM					=		rm -rf
 MAKE 				= 		make
 
-### GET EXEC
-$(NAME)				:		$(OBJ_TMP) $(OBJ_COMMON) $(OBJ_GNL) $(OBJ_MANDA) 
+### GET OBJECTS ON TMP DIRECTORY
+$(NAME)				:		$(OBJ_TMP) $(MANDA_TOT_OBJ)
 							$(MAKE) -C Libft
-							$(CC) $(FLAGS) $(UTILS) $(INCLUDE) $(LIB) -o $(NAME) $(OBJ_COMMON) $(OBJ_GNL) $(OBJ_MANDA)
-###$(CC) $(FLAGS) $(UTILS) $(FSANITIZE) $(INCLUDE) $(LIB) -o $(NAME) $(OBJ)
+							$(CC) $(FLAGS) $(UTILS) $(INCLUDE) $(LIB) -o $(NAME) $(MANDA_TOT_OBJ)
 
-$(NAME_B)			:		$(OBJ_TMP) $(OBJ_COMMON) $(OBJ_GNL) $(OBJ_BONUS) 
+$(NAME_B)			:		$(OBJ_TMP) $(BONUS_TOT_OBJ)
 							$(MAKE) -C Libft
-							$(CC) $(FLAGS) $(UTILS) $(INCLUDE) $(LIB) -o $(NAME_B) $(OBJ_COMMON) $(OBJ_GNL) $(OBJ_BONUS)
-###$(CC) $(FLAGS) $(UTILS) $(FSANITIZE) $(INCLUDE) $(LIB) -o $(NAME) $(OBJ)
+							$(CC) $(FLAGS) $(UTILS) $(INCLUDE) $(LIB) -o $(NAME_B) $(BONUS_TOT_OBJ)
 
+$(OBJ_TMP)			:	
+								mkdir -p $(OBJ_TMP)		
 
 ### RULES
 all					:		$(NAME)
