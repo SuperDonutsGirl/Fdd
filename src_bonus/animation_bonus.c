@@ -18,8 +18,15 @@ void	animation(float *x, float *y, int z, t_map *map)
 		z += map->altitude_neg;
 	if (z > 0 && map->altitude_pos != 0)
 		z += map->altitude_pos;
-	*x = (*x - *y) * cos(M_PI / map->div_rad);
-	*y = (*x + *y) * sin(M_PI / map->div_rad) - z * cos(M_PI / map->div_rad);
+	if (map->rot_x == 1)
+	{
+		*y = *y * cos(map->teta) - z * sin(map->teta);
+		z += *y * sin(map->teta) + z * sin(map->teta);
+	}
+	*x += (*x - *y) * cos(M_PI / map->div_rad);
+	*y += (*x + *y) * sin(M_PI / map->div_rad) - z * cos(M_PI / map->div_rad);
+	if (map->rot_y == 1)
+		*x = *x * cos(map->teta) + z * sin(map->teta);
 	*x *= map->zoom;
 	*y *= map->zoom;
 	*x += map->mvt_w;

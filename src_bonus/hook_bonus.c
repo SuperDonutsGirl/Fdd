@@ -14,7 +14,6 @@
 
 int	get_key(int key, t_map *map)
 {
-	printf("%d\n", key);
 	quit_map(key, map);
 	mlx_clear_window(map->mlx, map->mlx_win);
 	draw_map(map);

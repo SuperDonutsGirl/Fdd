@@ -27,7 +27,6 @@ OBJ_GNL				= 		$(addprefix $(OBJ_TMP), $(SRC_GNL:%.c=%.o))
 $(OBJ_TMP)%.o		:		$(GNL)%.c
 								$(CC) $(FLAGS) -c $< -o $@ $(INCLUDE)
 
-
 SRC_COMMON			= 		parsing.c  draw.c  utils.c	exit.c  init.c
 OBJ_COMMON			= 		$(addprefix $(OBJ_TMP), $(SRC_COMMON:%.c=%.o))							
 $(OBJ_TMP)%.o		:		$(SOURCE_C)%.c

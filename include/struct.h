@@ -43,8 +43,9 @@ typedef struct s_map
 	int		len_z;
 	int		color;
 	int		color_menu;
-	int		is_alt_pressed;
 	float	center[2];
+	int		rot_x;
+	int		rot_y;
 }	t_map;
 
 #endif

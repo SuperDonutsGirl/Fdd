@@ -30,10 +30,26 @@ void	zoom_mvt(int key, t_map *map)
 
 void	rotation(int key, t_map *map)
 {
-	if (key == 46)
-		map->teta += 5;
-	if (key == 45)
-		map->teta -= 5;
+	if (key == 89 || key == 92)
+	{
+		if (map->rot_x == 0)
+			map->rot_x = 1;
+		map->rot_y = 0;
+		if (key == 89)
+			map->teta -= 1;
+		if (key == 92)
+			map->teta += 1;
+	}
+	if (key == 83 || key == 85)
+	{
+		if (map->rot_y == 0)
+			map->rot_y = 1;
+		map->rot_x = 0;
+		if (key == 83)
+			map->teta -= 1;
+		if (key == 85)
+			map->teta += 1;
+	}
 }
 
 void	restore(int key, t_map *map)

@@ -12,7 +12,7 @@
 
 #include "../include/fdf_bonus.h"
 
-void	init_effect(t_map *map)
+void	init_zoom(t_map *map)
 {
 	if (map->width < 60)
 	{
@@ -27,6 +27,11 @@ void	init_effect(t_map *map)
 		map->init_zoom = 3;
 		map->add_zoom = 0.5;
 	}
+}
+
+void	init_effect(t_map *map)
+{
+	init_zoom(map);
 	map->teta = 1;
 	map->zoom = map->init_zoom;
 	map->mvt_h = 1;
@@ -38,7 +43,8 @@ void	init_effect(t_map *map)
 	map->color_menu = 0;
 	map->altitude_pos = 0;
 	map->altitude_neg = 0;
-	map->is_alt_pressed = 0;
+	map->rot_x = 0;
+	map->rot_y = 0;
 }
 
 int	main(int argc, char **argv)

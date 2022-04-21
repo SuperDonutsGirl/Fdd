@@ -37,7 +37,7 @@ void	bresenham(float x, float y, int type, t_map *map)
 {
 	float	dist[2];
 	float	next[2];
-	int		z_point[2];
+	float	z_point[2];
 	int		max;
 
 	get_next_point(&next[0], &next[1], type, map);
