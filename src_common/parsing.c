@@ -79,6 +79,8 @@ void	get_data_map(t_map *map, char *file)
 	char	*line;
 	char	**split;
 
+	if (!ft_memcmp_reverse(file, ".fdf"))
+		output_perso(map, "Invalid file\n");
 	fd = open_map(file);
 	line = get_next_line(fd);
 	get_tab(map);

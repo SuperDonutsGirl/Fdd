@@ -64,7 +64,6 @@ void	altitude(int key, t_map *map)
 	{
 		map->altitude_pos += 5;
 		map->altitude_neg -= 5;
-		printf("ici");
 	}
 	if (key == DOWN_Z)
 	{

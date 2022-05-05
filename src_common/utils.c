@@ -36,3 +36,22 @@ int	open_map(char *file)
 		output_auto(NULL);
 	return (fd);
 }
+
+int	ft_memcmp_reverse(char *s1, char *s2)
+{
+	int	len;
+	int	i;
+	int	y;
+
+	len = ft_strlen(s2);
+	i = ft_strlen(s1) - len;
+	y = 0;
+	while (s1[i] && s2[y])
+	{
+		if (s1[i] != s2[y])
+			return (0);
+		i++;
+		y++;
+	}
+	return (1);
+}

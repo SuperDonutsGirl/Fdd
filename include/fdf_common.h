@@ -48,5 +48,6 @@ int		open_map(char *file);
 int		len_split(char *line);
 void	parsing(t_map *map, char *file);
 void	ft_put_pixel(int x, int y, int color, t_map *map);
+int		ft_memcmp_reverse(char *s1, char *s2);
 
 #endif

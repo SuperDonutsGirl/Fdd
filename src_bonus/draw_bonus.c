@@ -24,8 +24,10 @@ void	draw_menu(t_map *map)
 	mlx_string_put(mlx, win, 1, y, WHITE, "          --HELP--");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, " ");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Zoom         scroll or +/- ");
-	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Altitude      alt + Arrow");
+	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Altitude      page up/down");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Translation        Arrow ");
+	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Rotation X axis   	 7 / 9 ");
+	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Rotation Y axis   	 1 / 3 ");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Point of view        V   ");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Restore map          R   ");
 	mlx_string_put(mlx, win, 1, y += 18, WHITE, "Color                C   ");

@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 	map->title = ft_strchr(argv[1], '/') + 1;
 	init_mlx_win(map);
 	draw_map(map);
+	printf("zoom = %f\n", map->zoom);
+	printf("width = %d\n", map->width);
 	mlx_key_hook(map->mlx_win, quit_map, map);
 	mlx_hook(map->mlx_win, 17, 0L, quit_x, map->mlx_win);
 	mlx_loop(map->mlx);
