@@ -54,7 +54,7 @@ void	init_center(t_map *map)
 	}
 	if (map->zoom == 2)
 	{
-		map->center[0] = (WIDTH_WIN / 2) ;
+		map->center[0] = (WIDTH_WIN / 2);
 		map->center[1] = 0;
 	}
 	if (map->zoom == 3.5)
@@ -75,6 +75,4 @@ void	animation(float *x, float *y, int z, t_map *map)
 	*y *= map->zoom;
 	*x += map->center[0];
 	*y += map->center[1];
-	//*x += (WIDTH_WIN / 2) - (map->width / 2);
-	//*y += (HEIGHT_WIN / 2) - (map->height / 2);
 }

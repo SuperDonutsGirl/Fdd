@@ -18,7 +18,6 @@ int	output_perso(t_map *map, char *message)
 		free(map);
 	write(2, "Error : ", 8);
 	write(2, message, ft_strlen(message));
-	system("leaks fdf");
 	exit(EXIT_FAILURE);
 }
 
@@ -58,7 +57,6 @@ int	quit_map(int key, t_map *map)
 	{
 		mlx_destroy_window(map->mlx, map->mlx_win);
 		free_map(map);
-		system("leaks fdf");
 		exit (EXIT_SUCCESS);
 	}
 	return (0);
@@ -68,9 +66,6 @@ int	quit_x(int keycode, t_map *map)
 {
 	(void)map;
 	if (keycode)
-	{
-		system("leaks fdf");
 		exit(EXIT_SUCCESS);
-	}
 	return (0);
 }

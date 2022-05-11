@@ -82,7 +82,7 @@ void	get_data_map(t_map *map, char *file)
 	if (!ft_memcmp_reverse(file, ".fdf"))
 		output_perso(map, "Invalid file\n");
 	fd = open_map(file);
-	line = get_next_line(fd);
+	line = first_gnl(map, fd);
 	get_tab(map);
 	y = -1;
 	while (line && ++y < map->height)

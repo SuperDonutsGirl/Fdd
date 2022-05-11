@@ -14,7 +14,6 @@
 # define FDF_BONUS_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <string.h>
 //# include </usr/X11/include/mlx.h>
 # include "mlx.h"

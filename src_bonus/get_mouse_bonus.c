@@ -18,7 +18,7 @@ void	scroll_zoom(int button, t_map *map)
 	{
 		if (button == 4)
 			map->zoom += map->add_zoom;
-		if (button == 5 && map->zoom > map->init_zoom)
+		if (button == 5 && (map->zoom - map->add_zoom) > 0)
 			map->zoom -= map->add_zoom;
 	}
 }

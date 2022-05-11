@@ -16,7 +16,7 @@ void	zoom_mvt(int key, t_map *map)
 {
 	if (key == PLUS)
 		map->zoom += map->add_zoom;
-	if (key == MINUS && map->zoom != 1)
+	if (key == MINUS && (map->zoom - map->add_zoom) > 0)
 		map->zoom -= map->add_zoom;
 	if (key == TOP)
 		map->mvt_h += 20;

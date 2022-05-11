@@ -55,3 +55,13 @@ int	ft_memcmp_reverse(char *s1, char *s2)
 	}
 	return (1);
 }
+
+char	*first_gnl(t_map *map, int fd)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	if (line == NULL)
+		output_perso(map, "Map invalid");
+	return (line);
+}
